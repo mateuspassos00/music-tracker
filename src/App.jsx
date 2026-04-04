@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 
@@ -13,30 +14,28 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const blurAmount = Math.min(scrollY / 80, 6); // max 6px blur
-  const opacityAmount = Math.max(1 - scrollY / 400, 0.35); // fades to 35%
+  const blurAmount = Math.min(scrollY / 80, 6);
+  const opacityAmount = Math.max(1 - scrollY / 400, 0.35);
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen text-white relative" style={{ background: "#1a1008" }}>
+      <div className="min-h-screen text-white relative flex flex-col" style={{ background: "#1a1008" }}>
 
-        {/* Forest background image */}
         <div
           style={{
             position: "fixed",
             inset: 0,
-            backgroundImage: "url('https://images.unsplash.com/photo-1628440622704-59047e272aed?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1800&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             filter: `blur(${blurAmount}px)`,
             opacity: opacityAmount,
-            transform: "scale(1.05)", // prevents blur edge artifacts
+            transform: "scale(1.05)",
             zIndex: 0,
             transition: "filter 0.1s ease, opacity 0.1s ease",
           }}
         />
 
-        {/* Dark overlay so text stays readable */}
         <div
           style={{
             position: "fixed",
@@ -46,13 +45,15 @@ function App() {
           }}
         />
 
-        {/* App content sits above the background */}
-        <div style={{ position: "relative", zIndex: 2 }}>
+        <div style={{ position: "relative", zIndex: 2 }} className="flex flex-col flex-1">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/collection" element={<Collection />} />
-          </Routes>
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/collection" element={<Collection />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
 
       </div>
