@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::placeholder {
+  color: #c8813a !important;
+  opacity: 0.6;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
