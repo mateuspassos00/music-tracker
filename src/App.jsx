@@ -6,7 +6,7 @@ import Collection from "./pages/Collection";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-neutral-950 text-white">
+      <div className="min-h-screen text-white" style={{ background: "#1a1008" }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

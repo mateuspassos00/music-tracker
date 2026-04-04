@@ -1,5 +1,5 @@
-import { addToCollection } from "../services/collectionApi";
 import { useState } from "react";
+import { addToCollection } from "../services/collectionApi";
 
 function AlbumCard({ id, title, artist, year, coverUrl }) {
   const [saved, setSaved] = useState(false);
@@ -9,13 +9,13 @@ function AlbumCard({ id, title, artist, year, coverUrl }) {
       await addToCollection({ mbid: id, title, artist, year, coverUrl });
       setSaved(true);
     } catch (err) {
-      if (err.response?.status === 409) setSaved(true); // already saved
+      if (err.response?.status === 409) setSaved(true);
     }
   }
 
   return (
     <div className="group flex flex-col cursor-pointer">
-      <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-zinc-800 mb-2">
+      <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-2" style={{ background: "#2c1a0e" }}>
         <img
           src={coverUrl}
           alt={title}
@@ -25,19 +25,19 @@ function AlbumCard({ id, title, artist, year, coverUrl }) {
             e.target.nextSibling.style.display = "flex";
           }}
         />
-        <div className="w-full h-full items-center justify-center text-4xl hidden absolute inset-0 bg-zinc-800">
+        <div className="w-full h-full items-center justify-center text-4xl hidden absolute inset-0" style={{ background: "#2c1a0e" }}>
           🎵
         </div>
-        {/* Add button — appears on hover */}
         <button
           onClick={handleAdd}
-          className="absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-500 text-white text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute bottom-2 right-2 text-white text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          style={{ background: saved ? "#4a2f1a" : "#c8813a" }}
         >
           {saved ? "Saved ✓" : "+ Add"}
         </button>
       </div>
-      <p className="text-white text-xs font-semibold truncate">{title}</p>
-      <p className="text-zinc-400 text-xs truncate">{artist} · {year}</p>
+      <p className="text-xs font-semibold truncate" style={{ color: "#e8c99a" }}>{title}</p>
+      <p className="text-xs truncate" style={{ color: "#c8813a" }}>{artist} · {year}</p>
     </div>
   );
 }
