@@ -25,7 +25,7 @@ function App() {
           style={{
             position: "fixed",
             inset: 0,
-            backgroundImage: "url('https://unsplash.com/photos/brown-trees-on-rocky-ground-during-daytime-qQxWAnfhUA8')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1628440622704-59047e272aed?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             filter: `blur(${blurAmount}px)`,
