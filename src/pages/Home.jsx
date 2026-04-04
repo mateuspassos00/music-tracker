@@ -23,7 +23,7 @@ function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center px-4 py-16">
       <div className="w-full max-w-2xl mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-2" style={{ color: "#e8c99a" }}>Find your albums</h1>
+        <h1 className="text-4xl font-bold mb-2" style={{ color: "#e8c99a", fontFamily: "'Ruritania', serif" }}>Find your albums</h1>
         <p className="mb-8" style={{ color: "#c8813a" }}>Search any artist or album and add it to your collection</p>
         <input
           value={query}

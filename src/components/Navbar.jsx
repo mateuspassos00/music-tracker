@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="w-full px-8 py-4 flex items-center justify-between" style={{ borderBottom: "1px solid #4a2f1a" }}>
-      <Link to="/" className="font-bold text-lg tracking-tight" style={{ color: "#e8c99a" }}>
+      <Link to="/" className="font-bold text-lg tracking-tight" style={{ color: "#e8c99a", fontFamily: "'Ruritania', serif" }}>
         Liosan
       </Link>
       <div className="flex gap-6 text-sm">
