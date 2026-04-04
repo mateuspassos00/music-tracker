@@ -25,7 +25,7 @@ function App() {
           style={{
             position: "fixed",
             inset: 0,
-            backgroundImage: "url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1800&q=80')",
+            backgroundImage: "url('https://unsplash.com/photos/brown-trees-on-rocky-ground-during-daytime-qQxWAnfhUA8')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             filter: `blur(${blurAmount}px)`,
