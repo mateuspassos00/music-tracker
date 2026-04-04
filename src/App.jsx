@@ -6,13 +6,13 @@ import Collection from "./pages/Collection";
 function App() {
   return (
     <BrowserRouter>
-      {/* <div className="min-h-screen bg-zinc-950 text-white"> */}
+      <div className="min-h-screen bg-neutral-950 text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Collection />} />
         </Routes>
-      {/* </div> */}
+      </div>
     </BrowserRouter>
   );
 }
