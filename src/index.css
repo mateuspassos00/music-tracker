@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Ruritania';
+  src: url('/fonts/Ruritania.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 ::placeholder {
   color: #c8813a !important;
   opacity: 0.6;
