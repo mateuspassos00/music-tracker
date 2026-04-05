@@ -41,7 +41,7 @@ function Collection() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
       <div className="flex items-baseline justify-between mb-8">
-        <h1 className="text-2xl font-bold" style={{ color: "#e8c99a", fontFamily: "'Ruritania', serif" }}>Collection</h1>
+        <h2 className="text-2xl font-bold" style={{ color: "#e8c99a", fontFamily: "'Ruritania', serif" }}>Collection</h2>
         <p className="text-sm" style={{ color: "#c8813a" }}>{albums.length} album{albums.length !== 1 ? "s" : ""}</p>
       </div>
 
